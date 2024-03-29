@@ -18,6 +18,12 @@ app.set("layout", './layouts/main')
 app.set('view engine', 'ejs')
 
 app.get('/', function(req, res){
-    res.render('index');
+    const locals = {
+        title: "NodeJS Notes Application",
+        description: "Notes display Node Application"
+    }
+    res.render('index', locals)
 })
-
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`)
+})
