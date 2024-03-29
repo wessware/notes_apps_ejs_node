@@ -66,3 +66,27 @@ h1, h2, h3, h4, h5, h6 {
     --bs-pagination-active-bg: var(--bs-primary-rgb);
     --bs-pagination-active-border-color: var(--bs-primary-rgb);
 }
+
+/* Home  */
+@media (min-width: 1200px) {
+    .home{
+        background: 
+            /*url("../images/human_1.svg") left bottom no-repeat,*/
+            /*url("../images/human_2.svg") right bottom no-repeat,*/
+            url("../images/bg_7.jpg") left top repeat,
+            var(--background-color);
+    }
+}
+
+.home-title::before {
+    content: url("../images/star_chem.svg");
+    position: absolute;
+    left: -50px;
+    top: -30px;
+}
+.home-title::after {
+    content: url("../images/star_chem.svg");
+    position: absolute;
+    right: -50px;
+    bottom: -30px;
+}
