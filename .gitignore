@@ -1,0 +1,5 @@
+#dependecnies
+/node_modules
+
+#development 
+.env
