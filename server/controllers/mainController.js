@@ -6,7 +6,10 @@ exports.homepage = async(req, res) => {
         description: "Notes display Node Application"
     }
 
-    res.render("index", locals)
+    res.render("index", {
+        locals,
+        layout: "../views/layouts/front-page"
+    })
 }
 exports.about = async(req, res) => {
     const locals = {
