@@ -17,13 +17,9 @@ app.use(expressLayouts)
 app.set("layout", './layouts/main')
 app.set('view engine', 'ejs')
 
-app.get('/', function(req, res){
-    const locals = {
-        title: "NodeJS Notes Application",
-        description: "Notes display Node Application"
-    }
-    res.render('index', locals)
-})
+//routes
+app.use('/', require('./server/routes/index'))
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`)
 })
