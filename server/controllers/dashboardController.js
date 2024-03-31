@@ -5,8 +5,8 @@ exports.dashboard = async (req, res) => {
         title: "Dashboard",
         description: "The working dashboard for your Notes"
     }
-    res.render("dashboard/index"), {
+    res.render("dashboard/index", {
         locals,
         layout: "../views/layouts/dashboard"
-    }
+    })
 }
