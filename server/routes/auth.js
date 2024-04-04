@@ -12,11 +12,11 @@ passport.use(new GoogleStrategy({
 },
     async function (accessToken, refreshToken, profile, done) {
 
-        const newUser = {
+        /* const newUser = {
             googleId: profile.id,
             displayName: profile.displayName,
             firstName: profile.name.givenName,
-            lastName: profile.name.familyName,
+            //lastName: profile.name.familyName,
             profileImage: profile.photos[0].value
         }
         try {
@@ -30,9 +30,8 @@ passport.use(new GoogleStrategy({
 
         } catch (error) {
             console.log(error)
-        }
-
-        console.log(profile);
+        } */
+        console.log(profile)
     }
 ));
 
