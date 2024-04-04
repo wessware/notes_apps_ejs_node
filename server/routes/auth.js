@@ -10,9 +10,8 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_CALLBACK_URL
   },
   function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
+    
+    console.log(profile);
   }
 ));
 
@@ -31,6 +30,19 @@ router.get('/google/callback',
 //route if something goes wrong
 router.get('/login-failure', (req, res) => {
     res.send('Something went wrong...')
-})
+});
+
+//presist user data after successfull authentication
+passport.serializeUser(function(user, done) {
+    done(null, user);
+  });
+
+  //retrieve user data from session
+  passport.deserializeUser(function(user, done) {
+    user.FindById(id, function(err, user) {
+      done(err, user);
+    });
+  });
+
 
 module.exports = router;

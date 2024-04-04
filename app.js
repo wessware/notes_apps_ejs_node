@@ -12,7 +12,7 @@ const app= express();
 const port = 5000 || process.env.PORT;
 
 app.use(passport.initialize());
-app.use(passport.session());
+//app.use(passport.session());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
