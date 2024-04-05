@@ -50,6 +50,18 @@ router.get('/google/callback',
 router.get('/login-failure', (req, res) => {
     res.send('Something went wrong...')
 });
+//Destroy session
+router.get("/logout", (req, res) => {
+    req.session.destroy(error => {
+        if(error) {
+            console.log(error);
+            res.send('Error loggin out')
+        } else {
+            res.redirect('/')
+        }
+    });
+});
+
 
 //presist user data after successfull authentication
 passport.serializeUser(function (user, done) {
