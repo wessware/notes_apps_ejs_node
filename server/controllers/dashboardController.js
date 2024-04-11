@@ -8,6 +8,7 @@ exports.dashboard = async (req, res) => {
         description: "The working dashboard for your Notes"
     }
     res.render("dashboard/index", {
+        userName: req.user.firstName,
         locals,
         layout: "../views/layouts/dashboard"
     })
